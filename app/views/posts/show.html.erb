@@ -1,0 +1,28 @@
+
+<div id="post_show_content" class="skinny_wrapper wrapper_padding">
+	<p id="notice"><%= notice %></p>
+	<header>
+		<p class="date"><%=	@post.created_at.strftime('%A, %B %d') %></p>
+		<h1><%= @post.title %></h1>
+		<hr>
+	</header>
+
+	<div id="content">
+		<%= @post.content %>
+	</div>
+	<hr>
+		<div id="share_box">
+		<p>Share <%= @post.title %></p>
+		<!-- VK share script -->
+		<script type="text/javascript">
+		document.write(VK.Share.button(false,{type: "custom", text: "<img src=\"http://vk.com/images/share_32.png\" width=\"32\" height=\"32\" />"}));
+		</script>
+	</div>
+	<hr>
+</div>
+
+
+
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
