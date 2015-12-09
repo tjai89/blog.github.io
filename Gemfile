@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'devise', '~> 3.5', '>= 3.5.2'
+gem 'mail_form', '~> 1.5', '>= 1.5.1'
 gem 'will_paginate', '~> 3.0', '>= 3.0.7'
 gem 'friendly_id', '~> 5.1'
 gem 'pygments.rb', '~> 0.6.3'

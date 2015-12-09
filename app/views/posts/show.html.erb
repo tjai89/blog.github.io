@@ -10,6 +10,11 @@
 	<div id="content">
 		<%= markdown @post.content %>
 	</div>
+		<div id="admin_links">
+			<%= link_to 'Back', posts_path %>
+			<%= link_to "Edit", edit_post_path(@post) %>
+			<%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" } %>
+		</div>
 	<hr>
 		<%= render "shared/disqus" %>
 
@@ -20,9 +25,3 @@
 	</div>
 	<hr>
 </div>
-
-
-
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
