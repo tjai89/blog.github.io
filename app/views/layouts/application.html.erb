@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>KirillZhuravlov</title>
-  <script type="text/javascript" src="http://vk.com/js/api/share.js?93" charset="windows-1251"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+	<title>Kirill Zhuravlov - Part Designer, Part Developer</title>
+	<link href='//fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -15,30 +14,29 @@
 		<nav>
 			<%= link_to "Articles", posts_path %>
 			<%= link_to "Projects", projects_path %>
-			<%= link_to "Contact",  new_contact_path %>
+			<%= link_to "Contact", new_contact_path %>
+			<% if user_signed_in? %>
+				<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+			<% end %>
 		</nav>
 	</header>
+
 	<% if notice %>
 		<p class="notice"><%= notice %></p>
 	<% elsif alert %>
-    	<p class="alert"><%= alert %></p>
-    <% end %>
+		<p class="alert"><%= alert %></p>
+	<% end %>
 
-
-  <%= yield %>
+	<%= yield %>
 
 	<footer id="main_footer">
-		<p class="copyright">
-			&copy; Zhuravlov Kirill 2015
-		</p>
+		<p class="copyright">&copy;<%= Time.now.strftime('%A, %d %b %Y %l:%M %p') %> Kirill Zhuravlov</p>
 		<nav>
-			<a href="https://vk.com/tjai89" target="_blank"><i class="fa fa-vk" ></i></a>
-			<a href="https://vk.com/tjai89" target="_blank"><i class="fa fa-vk" ></i></a>
-			<a href="https://vk.com/tjai89" target="_blank"><i class="fa fa-vk" ></i></a>
+			<a href="http://twitter.com/mackenziechild" target="_blank"><i class="fa fa-twitter"></i></a>
+			<a href="http://dribbble.com/mackenziechild" target="_blank"><i class="fa fa-dribbble"></i></a>
+			<a href="http://github.com/mackenziechild" target="_blank"><i class="fa fa-github"></i></a>
 		</nav>
 	</footer>
-	
-	<!-- script for disqus messages count --> 
-    <script id="dsq-count-scr" src="//kirillz-huravlov-blog.disqus.com/count.js" async></script>
+
 </body>
 </html>

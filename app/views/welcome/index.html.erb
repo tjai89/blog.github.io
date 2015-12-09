@@ -1,29 +1,26 @@
-	<div class="wrapper wrapper_padding clearfix">
-		<div class="col-1 about homepage_content">
-			<h2>About</h2>
-			<hr>
-			<p>All about me &amp; HOHOHO</p>
-			<p>kirillzhuravlov89@gmail.com </p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro exercitationem quis perspiciatis inventore atque nesciunt neque dolore doloribus, temporibus, doloremque ea. Earum obcaecati sunt asperiores enim exercitationem aliquam, voluptate <a href="">ipsum</a>.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint autem id, voluptate voluptatibus consequatur explicabo corrupti dignissimos commodi, asperiores, veritatis cumque sit ad dolorem voluptatum rerum voluptates nobis distinctio! Architecto.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eos ullam minima optio delectus dignissimos in, ad, vero nesciunt ducimus sint qui itaque tempore voluptate vel placeat eius impedit porro.</p>
-		</div>
-		<div class="col-2 homepage_content">
-			<h2>My articles</h2>
-			<hr>
-
-			<% @posts.each do |post| %>
-				<h3><%= link_to post.title, post %></h3>
-				<p class="date"><%= post.created_at.strftime("%A, %b %d") %></p>
-			<% end %>
-		</div>
-
-		<div class="col-3 homepage_content">
-			<h2>Projects</h2>
-			<% @projects.each do |project| %>
-				<h3><%= link_to project.title, project %></h3>
-				<p class="date"><%= project.created_at.strftime("%A, %b %d") %>
-				 <% end %>
-			<hr>
-		</div>
+<div class="wrapper wrapper_padding clearfix">
+	<div class="col-1 about homepage_content">
+		<h2>About me</h2>
+		<hr>
+		<p>Hey, my name is Kirill and  I'm a Ruby on rails  developer.</p>
+		<p>My web experience begins from <b>2013</b> till <b><%= Time.now.strftime('%A, %d %b %Y %l:%M %p') %></b> 
+		<br>
+		<p>From hobby it grows to a passion.</p>
 	</div>
+	<div class="col-2 homepage_content">
+		<h2>About rails development</h2>
+		<hr>
+		<% @posts.each do |post| %>
+			<h3><a href="#"><%= link_to post.title, post %></a></h3>
+			<p class="date"><%= post.created_at.strftime("%A, %b %d") %></p>
+		<% end %>
+	</div>
+	<div class="col-3 homepage_content">
+		<h2>My projects</h2>
+		<hr>
+		<% @projects.each do |project| %>
+			<h3><a href="#"><%= link_to project.title, project %></a></h3>
+			<p class="date"><%= project.created_at.strftime("%A, %b %d") %></p>
+		<% end %>
+	</div>
+</div>

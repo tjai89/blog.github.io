@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   get 'welcome/contact'
   get 'welcome/article_show'
 
+  # redirect to home if url in not correct
+  get '*path' => redirect('/')
+
 end
