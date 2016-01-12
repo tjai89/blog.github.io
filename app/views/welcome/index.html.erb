@@ -1,26 +1,45 @@
 <div class="wrapper wrapper_padding clearfix">
 	<div class="col-1 about homepage_content">
-		<h2>About me</h2>
-		<hr>
-		<p>Hey, my name is Kirill and  I'm a Ruby on rails  developer.</p>
-		<p>My web experience begins from <b>2013</b> till <b><%= Time.now.strftime('%A, %d %b %Y %l:%M %p') %></b> 
+		<h2><%= image_tag "icons/my_face.jpg", class: "img-circle"%> About me</h2>
+
+		<!-- Calculate my age -->
+		<h3>Hey, my name is Kirill. I'm <%= Time.now.strftime("%Y").to_i - 1989 %> and i'm Ruby on Rails developer. 
+		The goal of this project is simply to say Hello World. Its also some kind of studentbook for myself and maybe for others who's interested in
+		<!-- ruby on rails bubble script -->
+		<canvas id="myCanvas"></canvas> 
+    	<%= javascript_include_tag "bubbles/bubbles_main.js", "data-turbolinks-track" => true %>
+    	<%= javascript_include_tag "bubbles/main.js", "data-turbolinks-track" => true %>
+ development.</h3>
+
+
+		<p>My web experience begins began in <b>2013</b> and continues till <b><%= Time.now.strftime('%A, %d %b %Y %l:%M %p') %></b> 
 		<br>
-		<p>From hobby it grows to a passion.</p>
+		<p>From hobby it grows to a passion. Since then I walk a long way from HTML to Rails, learn lot of stuff and still carry on.</p>
+		<p>I want to say Big Thanks to <a href="https://www.codecademy.com/" target="_blank">codecademy.com</a>  for pushing me from my miserable nil-coding life to full of passion Ruby on Rails web development.</p>
+		<h3>My hobbys</h3>
+		<ul>
+			<li>Video games</li>
+			<li>Books</li>
+			<li>Music</li>
+			<li>Good movies</li>
+			<li>Hiking</li>
+		</ul>
+		<h3>If you wish to contact me or hire as a Ruby on Rails developer follow the contact page and send a message! You can also check my social icons.</h3>
 	</div>
 	<div class="col-2 homepage_content">
-		<h2>About rails development</h2>
+		<h2><%= link_to "Latest articles", posts_path %></h2>
 		<hr>
 		<% @posts.each do |post| %>
 			<h3><a href="#"><%= link_to post.title, post %></a></h3>
-			<p class="date"><%= post.created_at.strftime("%A, %b %d") %></p>
+			<p class="date"><%= post.created_at.strftime('%A, %Y %B %d') %></p>
 		<% end %>
 	</div>
 	<div class="col-3 homepage_content">
-		<h2>My projects</h2>
+		<h2><%= link_to "My projects", projects_path %></h2>
 		<hr>
 		<% @projects.each do |project| %>
 			<h3><a href="#"><%= link_to project.title, project %></a></h3>
-			<p class="date"><%= project.created_at.strftime("%A, %b %d") %></p>
+			<p class="date"><%= project.created_at.strftime('%A, %Y %B %d') %></p>
 		<% end %>
 	</div>
 </div>

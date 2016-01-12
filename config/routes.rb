@@ -6,11 +6,6 @@ Rails.application.routes.draw do
   resources :projects
   resources :contacts, only: [:new, :create]
 
-  
-  get 'welcome/articles'
-  get 'welcome/contact'
-  get 'welcome/article_show'
-
   # redirect to home if url in not correct
   get '*path' => redirect('/')
 

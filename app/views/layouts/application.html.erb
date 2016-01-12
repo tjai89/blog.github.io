@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Kirill Zhuravlov - Part Designer, Part Developer</title>
+	<title>Kirill Zhuravlov</title>
 	<link href='//fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  	<%= csrf_meta_tags %>
 </head>
 <body>
 	<header id="main_navigation" class="clearfix">
+	<% if user_signed_in? %>
+		<%= @user %>
+	<% end %>
 		<%= link_to "Kirill Zhuravlov", root_path, class: "name" %>
+
 		<nav>
-			<%= link_to "Articles", posts_path %>
-			<%= link_to "Projects", projects_path %>
-			<%= link_to "Contact", new_contact_path %>
+			<%= link_to "Home", root_path %>
+			<%= link_to "Blog", posts_path %>
+			<%= link_to "My projects", projects_path %>
+			<%= link_to "Contact me", new_contact_path %>
 			<% if user_signed_in? %>
 				<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
 			<% end %>
@@ -26,17 +31,23 @@
 	<% elsif alert %>
 		<p class="alert"><%= alert %></p>
 	<% end %>
+	<div class="main_content">
+		<%= yield %>
+	</div>
 
-	<%= yield %>
 
 	<footer id="main_footer">
 		<p class="copyright">&copy;<%= Time.now.strftime('%A, %d %b %Y %l:%M %p') %> Kirill Zhuravlov</p>
 		<nav>
-			<a href="http://twitter.com/mackenziechild" target="_blank"><i class="fa fa-twitter"></i></a>
-			<a href="http://dribbble.com/mackenziechild" target="_blank"><i class="fa fa-dribbble"></i></a>
-			<a href="http://github.com/mackenziechild" target="_blank"><i class="fa fa-github"></i></a>
+			<a href="https://twitter.com/KirillZhuravlov" target="_blank"><i class="fa fa-twitter"></i></a>
+			<a href="http://github.com/tjai89" target="_blank"><i class="fa fa-github"></i></a>
+			<a href="https://vk.com/tjai89" target="_blank"><i class="fa fa-vk"></i></a>
+			<a href="https://www.facebook.com/kirillzhuravlov" target="_blank"><i class="fa fa-facebook"></i></a>
+
+
 		</nav>
 	</footer>
-
+    
+    <script id="dsq-count-scr" src="//kirillzhuravlovblog.disqus.com/count.js" async></script>
 </body>
 </html>

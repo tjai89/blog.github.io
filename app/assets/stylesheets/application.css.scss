@@ -4,10 +4,18 @@ $dark: #424652;
 $white: #FFFFFF;
 $light: #9a9da4;
 $highlight: #8bc6db;
-$border: #E9E9E9;
+$border: #438CE7;
 
 * {
 	box-sizing: border-box;
+}
+
+.img-circle {
+    border-radius: 50%;
+    width: 170px;
+    height: 302px;
+    float: left;
+
 }
 
 body {
@@ -17,6 +25,7 @@ body {
 .wrapper {
 	width: 90%;
 	margin: 0 auto;
+	min-height: calc(100% - 421px); 
 }
 
 .skinny_wrapper {
@@ -96,6 +105,7 @@ hr {
 }
 
 #main_navigation {
+	background-color: #e9eaea;
 	padding: 2.5em 5%;
 	border-bottom: 1px solid $border;
 	.name {
@@ -108,15 +118,22 @@ hr {
 		text-decoration: none;
 		color: $dark;
 		float: left;
+		&:hover {
+			color: $highlight;
+		}
 	}
 	nav {
 		float: right;
 		padding-top: 1.5rem;
 		a {
+
 			color: $dark;
 			text-decoration: none;
 			margin: 0 1rem;
 			font-size: 1rem;
+			&:hover {
+				color: $highlight;
+			}
 		}
 	}
 }
@@ -130,6 +147,10 @@ hr {
 }
 
 #main_footer {
+	background-color: #4A9DF9;
+	width: 100%;
+	bottom: 0; 
+	height: 8em;
 	padding: 2.5em 5%;
 	border-top: 1px solid $border;
 	.copyright {
