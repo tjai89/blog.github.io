@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'puma'
 gem 'rails_12factor', group: :production
 gem 'devise', '~> 3.5', '>= 3.5.2'
 gem 'mail_form', '~> 1.5', '>= 1.5.1'
