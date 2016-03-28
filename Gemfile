@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'rails_12factor', group: :production
 gem 'devise', '~> 3.5', '>= 3.5.2'
 gem 'mail_form', '~> 1.5', '>= 1.5.1'
 gem 'will_paginate', '~> 3.0', '>= 3.0.7'
@@ -9,7 +9,8 @@ gem 'redcarpet', '~> 3.3', '>= 3.3.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
